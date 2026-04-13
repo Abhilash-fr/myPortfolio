@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio.css">
+    <title>Portfolio</title>
+    <script src="https://kit.fontawesome.com/aa362fef18.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- -------------------------header------------------------- -->
+    <div class="top-left-text">
+    Abhilash_fr
+    </div>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>B.Sc. (Hons) in<br> Information Technology and Management (Ongoing)</p>
+                <h1>Hi, I'm <span>Akil Abhilash</span></h1>
+            </div>
+        </div>
+    </div>
+    <!-------------------------about------------------------->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-01">
+                    <img src="img/my img 02.jpg" alt="photo">
+                </div>
+                <div class="about-02">
+                    <h1 class="sub-title">About Me</h1>
+                    <p class="para">I'm a passionate and dedicated student pursuing a B.Sc. (Hons) in Information Technology and Management.
+                    With a strong interest in technology and its applications, I am committed to gaining knowledge and skills 
+                    in the field of IT and management. I am eager to explore various aspects of information technology, 
+                    including software development, data analysis, and project management. Through my studies, I aim to develop
+                    a solid foundation in both technical and managerial aspects of the industry, preparing myself for a 
+                    successful career in the ever-evolving world of technology.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Front-End Web Development</span><br> HTML, CSS, basic JavaScript</li>
+                            <li><span>Basic Programming</span><br> C, Python</li>
+                            <li><span>Microsoft Office</span><br> Word, Excel, PowerPoint</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2025 July - 2026 January</span><br>Internship at Commercial Bank - Ragama</li>   
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>On-going</span><br>B.Sc. (Hons) in Information Technology and Management</li>
+                            <li><span>2024</span><br>G.C.E A/L</li>
+                            <li><span>2022</span><br>G.C.E O/L</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!---------------projects--------------->
+<div id="projects">
+    <div class="container">
+       <center><h1 class="sub-title">My Work</h1></center>
+        <div class="work-list">
+            <div class="work">
+                <img src="img/work.jpg" alt="work">
+                <div class="layer">
+                    <h3>Blog Article</h3>
+                    <p>Introduction to HTML: The Backbone of the Web</p>
+                    <a href="https://medium.com/@akilabhilash/introduction-to-html-the-backbone-of-the-web-844bc112d240"><i class="fa-brands fa-medium"></i></a>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -------------------------contact------------------------- -->  
+ <div id="contact">
+    <div class="container">
+        <div id="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-envelope"></i>akilabhilash@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+94 75 497 7382</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/abhilash_fr?igsh=MWE1eTY3aGN2enM1MQ==https://www.instagram.com/abhilash_fr?igsh=MWE1eTY3aGN2enM1MQ==">
+                        <i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1BFgz37Pv3/">
+                        <i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/akil-abhilash-3b79403a8?utm_source=share_via&utm_content=profile&utm_medium=member_android">
+                        <i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                 <form id="form" onsubmit="showMessage(event)">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea rows="6" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send</button>
+                    </form>
+                    <span id="msg"></span>
+            
+        </div>
+        
+ </div>
+
+ <script>
+
+    var tabLinks = document.getElementsByClassName("tab-links");
+    var tabContents = document.getElementsByClassName("tab-contents");
+    function opentab(tabName) {
+        for (tablink of tabLinks) {
+            tablink.classList.remove("active-link");
+        }        
+        for (tabContent of tabContents) {
+            tabContent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabName).classList.add("active-tab");
+    }
+ </script>
+ <script>
+
+    function showMessage(event) {
+        event.preventDefault();
+        var name = document.forms["form"]["name"].value;
+        var email = document.forms["form"]["email"].value;
+        var message = document.forms["form"]["message"].value;
+        if (name && email && message) {
+            document.getElementById("msg").innerHTML = "Message sent successfully!";
+            document.getElementById("form").timeout = setTimeout(function() {
+                document.getElementById("msg").innerHTML = "";
+            }, 3000);
+             document.getElementById("form").reset();
+        } else {
+            document.getElementById("msg").innerHTML = "Please fill in all fields.";
+            document.getElementById("msg").style.color = "red";
+        }
+    }
+</script>
+</body>
+</html>
